@@ -1,0 +1,31 @@
+{
+  "name": "pokemon-collection-server",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run src",
+    "audit:card-integrity": "tsx src/auditCardIntegrity.ts",
+    "audit:classification-review": "tsx src/auditClassificationReview.ts",
+    "audit:tcgdex-coverage": "tsx src/auditTcgdexCoverage.ts",
+    "audit:tcgdex-source-coverage": "tsx src/auditTcgdexCoverage.ts --source",
+    "migrate:card-integrity": "tsx src/migrateCardIntegrity.ts",
+    "refresh:card-classification": "tsx src/refreshCardClassification.ts"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongoose": "^8.9.2"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.10.2",
+    "tsx": "^4.19.2",
+    "typescript": "~5.6.3",
+    "vitest": "^4.1.12"
+  }
+}

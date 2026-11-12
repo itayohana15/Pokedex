@@ -1,0 +1,23 @@
+{
+  "name": "pokemon-collection",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "dev": "concurrently -k -n server,client -c blue,green \"npm:dev --workspace server\" \"npm:dev --workspace client\"",
+    "build": "npm run build --workspace server && npm run build --workspace client",
+    "test": "npm run test --workspace server",
+    "audit:card-integrity": "npm run audit:card-integrity --workspace server",
+    "audit:classification-review": "npm run audit:classification-review --workspace server",
+    "audit:tcgdex-coverage": "npm run audit:tcgdex-coverage --workspace server --",
+    "audit:tcgdex-source-coverage": "npm run audit:tcgdex-source-coverage --workspace server --",
+    "migrate:card-integrity": "npm run migrate:card-integrity --workspace server",
+    "refresh:card-classification": "npm run refresh:card-classification --workspace server --"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
